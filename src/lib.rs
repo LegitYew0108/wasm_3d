@@ -264,7 +264,7 @@ pub async fn run() -> Result<(), JsValue> {
 
         let camera_position = vec3::from_values(0.0, 60.0, 90.0);
         let lookat_position = vec3::from_values(0.0, 0.0, 0.0);
-        let up_direction = vec3::from_values(0.0, 0.0, 0.0);
+        let up_direction = vec3::from_values(0.0, 1.0, 0.0);
         let mut view = mat4::create();
         mat4::look_at(&mut view, &camera_position, &lookat_position, &up_direction);
 
