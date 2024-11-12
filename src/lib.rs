@@ -42,8 +42,8 @@ pub async fn run() -> Result<(), JsValue> {
         return Err(JsValue::NULL);
     };
 
-    canvas_element.set_width(500);
-    canvas_element.set_height(500);
+    canvas_element.set_width(1920);
+    canvas_element.set_height(1080);
     
     console::log_1(&"set canvas success".into());
 
@@ -250,7 +250,7 @@ pub async fn run() -> Result<(), JsValue> {
 
         let mut rotation = mat4::create();
         let rotation_clone = rotation;
-        mat4::rotate_z(&mut rotation, &rotation_clone, PI/4.0);
+        mat4::rotate_z(&mut rotation, &rotation_clone, PI/8.0);
 
         let mut translation = mat4::create();
         let translation_clone = translation;
