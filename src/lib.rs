@@ -262,6 +262,8 @@ pub async fn run() -> Result<(), JsValue> {
         let interleaved_buffer = create_f32_buffer(WebGl2RenderingContext::ARRAY_BUFFER, &vertices, &gl).await.unwrap();
         let index_buffer = create_u16_buffer(WebGl2RenderingContext::ELEMENT_ARRAY_BUFFER, &indices, &gl).await.unwrap();
 
+        gl.enable(WebGl2RenderingContext::DEPTH_TEST);
+        gl.enable(WebGl2RenderingContext::CULL_FACE);
         let mut scale = mat4::create();
         let scale_clone = scale;
         mat4::scale(&mut scale,&scale_clone, &[1.0,1.0,1.0]);
